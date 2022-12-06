@@ -1,5 +1,5 @@
 <template>
-    <div class="ArticulosLista">
+    <div class="ArticulosLista"> 
         <!-- button @click.prevent="traeArticulos()">Datos</button -->
         <button @click.prevent="nuevoArticulo()" class="btn btn-success btn-lg">Nuevo</button>
         <table class="table table-striped">
