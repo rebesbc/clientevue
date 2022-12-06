@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-
+import Articulos from '../views/Articulos.vue'
+import Editar from '../components/Editar.vue'
+import Detalle from '../components/Detalle.vue'
+import Nuevo from '../components/Nuevo.vue'
+import VueCompositionAPI from '@vue/composition-api'
+Vue.use(VueCompositionAPI)
 Vue.use(VueRouter)
 
 const routes = [
@@ -9,6 +14,29 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/articulos',
+    name: 'articulos',
+    component: Articulos
+  },
+  {
+    path: '/detalle',
+    name: 'detalle',
+    component: Detalle,
+    props: true // acepta parámetros
+  },
+  {
+    path: '/editar',
+    name: 'editar',
+    component: Editar,
+    props: true // acepta parámetros
+  },
+  {
+    path: '/nuevo',
+    name: 'nuevo',
+    component: Nuevo,
+    // no acepta parámetros
   },
   {
     path: '/about',
