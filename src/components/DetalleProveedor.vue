@@ -1,11 +1,13 @@
 <template>
     <div class="Detalle">
         <img class="imgencabezado" src="../assets/detail.png"/>
-        <h2>Detalle del Artículo</h2><br/>
-        <span>Artículo número:</span> {{id}}<br/><br/>
-        <span>Descripción:</span> {{articulos.descripcion}}<br/><br/>
-        <span>Cantidad:</span> {{articulos.cantidad}} piezas<br/><br/>
-        <span>Precio:</span> ${{articulos.precio}} MXN
+        <h2>Detalle del Proveedor</h2><br/>
+        <span>Proveedor número:</span> {{id}}<br/><br/>
+        <span>Nombre:</span> {{proveedores.nombre}}<br/><br/>
+        <span>Dirección:</span> {{proveedores.direccion}}<br/><br/>
+        <span>RFC:</span> {{proveedores.rfc}}<br/><br/>
+        <span>Teléfono:</span> {{proveedores.telefono}}<br/><br/>
+        <span>Observaciones:</span> {{proveedores.observaciones}} 
     </div>
 </template>
 
@@ -14,14 +16,14 @@ import {URL_DATOS} from '../utils/constantes'
 import axios from "axios"
 
 export default {
-    name:"Detalle",
+    name:"DetalleProveedor",
     components:{},
     props: {
         id: Number,
     },
     data: function(){
         return{
-            articulos: [],
+            proveedores: [],
         };
     },
     created() {
@@ -29,16 +31,16 @@ export default {
     },
     methods: {
         traeDetalle: async function(){
-         let a = []
-         await axios.get(URL_DATOS + "/articulos/" + this.id)
+         let p = []
+         await axios.get(URL_DATOS + "/proveedores/" + this.id)
          .then(function(response){
             //console.log(response.data[0]);
-            a = response.data[0];
+            p = response.data[0];
          })
          .catch(function(error){
             console.log(error);
          });
-         this.articulos = a;
+         this.proveedores = p;
       },
     },
 };

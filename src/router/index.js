@@ -1,12 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Articulos from '../views/Articulos.vue'
-import Editar from '../components/Editar.vue'
+import Articulos from  '../views/Articulos.vue'
 import Detalle from '../components/Detalle.vue'
+import Editar from '../components/Editar.vue'
 import Nuevo from '../components/Nuevo.vue'
-import VueCompositionAPI from '@vue/composition-api'
-Vue.use(VueCompositionAPI)
+
+import Proveedores from  '../views/Proveedores.vue'
+import NuevoProveedor from '../components/NuevoProveedor.vue'
+import EditarProveedor from '../components/EditarProveedor.vue'
+import DetalleProveedor from '../components/DetalleProveedor.vue'
+
+import Clientes from '../views/Clientes.vue'
+import NuevoCliente from '../components/NuevoCliente.vue'
+import EditarCliente from '../components/EditarCliente.vue'
+import DetalleCliente from '../components/DetalleCliente.vue'
+
+import Entradas from '../views/Entradas.vue'
+import NuevaEntrada from '../components/NuevaEntrada.vue'
+
+import Salidas from '../views/Salidas.vue'
+import NuevaSalida from '../components/NuevaSalida.vue'
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -21,22 +37,85 @@ const routes = [
     component: Articulos
   },
   {
-    path: '/detalle',
+    path:'/detalle',
     name: 'detalle',
     component: Detalle,
-    props: true // acepta parámetros
+    props: true,
   },
   {
-    path: '/editar',
+    path:'/editar',
     name: 'editar',
     component: Editar,
-    props: true // acepta parámetros
+    props: true,
   },
   {
-    path: '/nuevo',
+    path:'/nuevo',
     name: 'nuevo',
     component: Nuevo,
-    // no acepta parámetros
+  },
+  {
+    path: '/clientes',
+    name: 'clientes',
+    component: Clientes
+  },
+  {
+    path:'/detallecliente',
+    name: 'detallecliente',
+    component: DetalleCliente,
+    props: true,
+  },
+  {
+    path:'/editarcliente',
+    name: 'editarcliente',
+    component: EditarCliente,
+    props: true,
+  },
+  {
+    path:'/nuevocliente',
+    name: 'nuevocliente',
+    component: NuevoCliente,
+  },
+  {
+    path: '/proveedores',
+    name: 'proveedores',
+    component: Proveedores
+  },
+  {
+    path:'/detalleProveedor',
+    name: 'detalleProveedor',
+    component: DetalleProveedor,
+    props: true,
+  },
+  {
+    path: '/nuevoProveedor',
+    name: 'nuevoProveedor',
+    component: NuevoProveedor
+  },
+  {
+    path:'/editarProveedor',
+    name: 'editarProveedor',
+    component: EditarProveedor,
+    props: true,
+  },
+  {
+    path: '/entradas',
+    name: 'entradas',
+    component: Entradas
+  },
+  {
+    path: '/nuevaEntrada',
+    name: 'nuevaEntrada',
+    component: NuevaEntrada
+  },
+  {
+    path: '/salidas',
+    name: 'salidas',
+    component: Salidas
+  },
+  {
+    path: '/nuevaSalida',
+    name: 'nuevaSalida',
+    component: NuevaSalida
   },
   {
     path: '/about',

@@ -3,16 +3,14 @@
 </template>
 
 <script>
-import ArticulosLista from '../components/ArticulosLista.vue'
+import ArticulosLista from '../components/ArticulosLista.vue';
 
-export default{
-    name: "Articulos",
-    components: { ArticulosLista },
-    data: function(){
-        return{
-
-        }
-    },
-    methods: {}
+export default {
+   components: { ArticulosLista },
+   name: "Articulos",
+   data: function(){
+      return {};
+   },
+   methods: {},
 }
 </script>
